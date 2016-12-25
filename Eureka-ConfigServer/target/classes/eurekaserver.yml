@@ -1,0 +1,6 @@
+eureka:
+    app: 
+      name: eurekaserver
+    server: 
+      hostname: localhost
+      port: 8081
