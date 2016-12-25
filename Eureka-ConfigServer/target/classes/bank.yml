@@ -1,0 +1,18 @@
+
+bank:
+  application:
+    name: EurekaClient-Bank-PCF
+  server:
+     port: 8082
+
+
+eureka:
+    app: 
+      name: eurekaserver
+    server: 
+      hostname: localhost
+      port: 8081
+
+datasource:
+   postgresql:
+      url: jdbc:postgresql://localhost:5432/postgres
