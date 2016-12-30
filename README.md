@@ -95,9 +95,9 @@ zuul:<br />
  
  
  Finally , start the applications in order 
-# EurekaServer  -- http://localhost:8081/
-# EurekaClientDemoApp -- http://localhost:8085/
-# ZuulProxyServer -- http://localhost:8083/
+#### EurekaServer  -- http://localhost:8081/
+#### EurekaClientDemoApp -- http://localhost:8085/
+#### ZuulProxyServer -- http://localhost:8083/
 
 Zuul will act as reverse proxy server/ API gateway 
 
