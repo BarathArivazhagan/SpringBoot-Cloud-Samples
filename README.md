@@ -56,7 +56,7 @@ zuul.routes.app1.path = /client/* <br/>
 zuul.routes.app1.url = http://localhost:8085/client/ <br/>
 zuul.routes.app1.strip-prefix = true
   
-//zuul routes 
+#### zuul routes 
 // Example :<br />
 
 // zuul:<br />
