@@ -1,24 +1,22 @@
-package com.barath.zuul.app;
+package com.barath.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@EnableZuulProxy
 @EnableDiscoveryClient
 @RestController
-public class ZuulProxyServerApplication {
+public class EurekaClientDemoAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZuulProxyServerApplication.class, args);
+		SpringApplication.run(EurekaClientDemoAppApplication.class, args);
 	}
 	
-	@RequestMapping("/")
-	public String test(){
-		return "Welcome to ZUUL application";
+	@GetMapping("/")
+	public String home(){
+		return "welcome to eureka client";
 	}
 }

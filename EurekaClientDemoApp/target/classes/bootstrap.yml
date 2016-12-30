@@ -1,0 +1,9 @@
+
+
+spring:
+  application:
+    name: eurekaclientdemoapp
+  cloud:
+     config:       
+      name: eurekaclientdemoapp
+      uri: http://localhost:8888
