@@ -9,12 +9,12 @@ Guide :
 1. Add @EnableEurekaServer 
 2. Define the following properties in application properties 
 
-eureka:
-  instance:   
-    hostname: ${eureka.server.hostname:localhost} 
-  client:
-    register-with-eureka: false 
-    fetch-registry: false
+eureka:<br />
+  instance:   <br />
+    hostname: ${eureka.server.hostname:localhost} <br />
+  client:<br />
+    register-with-eureka: false <br />
+    fetch-registry: false<br />
     
 
 Run the app --> Go to http://localhost:8081 
@@ -61,7 +61,7 @@ spring:
 server:
   port: ${zuul.server.port:8083}
 
-# eureka service properties 
+// eureka service properties 
 eureka:
   client:
     serviceUrl:
@@ -71,8 +71,8 @@ eureka:
   #instance:
     #prefer-ip-address: true
 
-# zuul routes 
-# Example :
+//zuul routes 
+// Example :
 
 // zuul:
 //  routes:
