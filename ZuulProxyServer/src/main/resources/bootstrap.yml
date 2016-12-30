@@ -1,0 +1,7 @@
+
+
+spring:
+  cloud:
+    config:
+      name: zuulproxy
+      uri: http://localhost:8888 #Specify the url of the config server

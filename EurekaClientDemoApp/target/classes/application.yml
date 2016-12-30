@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: eurekaclientdemoapp
+
+server:
+  port: 8085
+  context-path: /client
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone:  http://${eureka.server.hostname:localhost}:${eureka.server.port:8081}/eureka
+  #instance:
+    #prefer-ip-address: true
+    
