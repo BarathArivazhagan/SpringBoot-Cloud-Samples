@@ -74,13 +74,13 @@ eureka:
 # zuul routes 
 # Example :
 
-# zuul:
-#  routes:
-#      routename(can be any name):
-#        path: << path to match >>
-#        url: << url to be forwarded >>
-#        id: application name registered with the eureka server
-#        strip-prefix: true/false 
+// zuul:
+//  routes:
+//      routename(can be any name):
+//       path: << path to match >>
+//        url: << url to be forwarded >>
+//        id: application name registered with the eureka server
+//        strip-prefix: true/false 
 
 zuul:
   routes:
