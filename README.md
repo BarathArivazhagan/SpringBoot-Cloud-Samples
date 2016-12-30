@@ -9,12 +9,11 @@ Guide :
 1. Add @EnableEurekaServer 
 2. Define the following properties in application properties 
 
-eureka:<br />
-  __instance:   <br />
-    hostname: ${eureka.server.hostname:localhost} <br />
-  client:<br />
-    register-with-eureka: false <br />
-    fetch-registry: false<br />
+server.port=8081  <br />
+eureka.instance.hostname=localhost  <br />
+eureka.client.register-with-eureka=false  <br />
+eureka.client.fetch-registry=false  <br />
+
     
 
 Run the app --> Go to http://localhost:8081 
@@ -25,21 +24,13 @@ Run the app --> Go to http://localhost:8081
 
 1. Add @EnableDiscoveryClient to qualify app as a client to eureka server
 2. properties : 
-
-server: <br />
-  port: 8085 <br />
-  context-path: /client  <br />
-
-eureka: <br />
-  client:<br />
-    register-with-eureka: true<br />
-    fetch-registry: true<br />
-    serviceUrl:<br />
-      defaultZone:  http://${eureka.server.hostname:localhost}:${eureka.server.port:8081}/eureka<br />
-      or
-      defaultZone: http://localhost:8081/eureka <br />
-  #instance:<br />
-    #prefer-ip-address: true // depends whether ip address should be prefered for service registration<br /> 
+spring.application.name=eurekaclientdemoapp<br />
+server.port=8085  <br />
+server.context-path=/client   <br />
+eureka.client.serviceUrl.defaultZone=http://localhost:8081/eureka <br/>
+eureka.client.register-with-eureka=false  <br />
+eureka.client.fetch-registry=false  <br />
+//eureka.instance.prefer-ip-address=true // depends whether ip address should be prefered for service registration<br /> 
     
 
 Since we have added context root for the application: 
@@ -53,24 +44,18 @@ Run the app and test it : http://localhost:8085/client
 1. Add @EnableZuulProxy 
 2. Properties : 
 
-
-spring:<br />
-  application:<br />
-      name: zuulproxy<br />
-
-server:<br />
-  port: ${zuul.server.port:8083}<br />
+spring.application.name=zuulproxy<br />
+server.port: 8083<br />
 
 #### eureka service properties 
-eureka:<br />
-  client:<br />
-    serviceUrl:<br />
-      defaultZone:  http://${eureka.server.hostname:localhost}:${eureka.server.port:8081}/eureka<br />
-    register-with-eureka: true<br />
-    fetch-registry: true<br />
-  #instance:<br />
-    #prefer-ip-address: true<br />
-
+eureka.client.serviceUrl.defaultZone=http://localhost:8081/eureka <br/>
+eureka.client.register-with-eureka=false  <br />
+eureka.client.fetch-registry=false  <br />
+//eureka.instance.prefer-ip-address=true // depends whether ip address should be prefered for service registration<br /> 
+zuul.routes.app1.path = /client/* <br/>
+zuul.routes.app1.url = http://localhost:8085/client/ <br/>
+zuul.routes.app1.strip-prefix = true
+  
 //zuul routes 
 // Example :<br />
 
@@ -82,12 +67,7 @@ eureka:<br />
 //        id: application name registered with the eureka server<br />
 //        strip-prefix: true/false <br />
 
-zuul:<br />
-  routes:<br />
-    app1:<br />
-      path: /client/*<br />
-      url: http://localhost:8085/client/<br />
-      strip-prefix: true<br />
+
       
  
  Run the app and test by going through http://localhost:8083/ 
