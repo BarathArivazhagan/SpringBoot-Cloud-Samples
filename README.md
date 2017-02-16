@@ -59,13 +59,13 @@ zuul.routes.app1.strip-prefix = true
 #### zuul routes 
 // Example :<br />
 
-// zuul:<br />
-//  routes:<br />
-//      routename(can be any name):<br />
-//       path: << path to match >><br />
-//        url: << url to be forwarded >><br />
-//        id: application name registered with the eureka server<br />
-//        strip-prefix: true/false <br />
+  ```zuul:
+       routes:
+         routename(can be any name):
+              path: << path to match >>
+              url: << url to be forwarded >>
+              id: application name registered with the eureka server
+              strip-prefix: true/false  ```
 
 
       
